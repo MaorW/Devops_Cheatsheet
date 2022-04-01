@@ -12,6 +12,8 @@
 
 ### For python's build-in types press [here](https://docs.python.org/3/library/stdtypes.html) 
 
+### For python's format documentation press [here](https://pyformat.info/) 
+
 ### Data types and variables
 ```
 x = 5 # Integer
@@ -40,6 +42,17 @@ num_of_breaks = int(input('Enter digits : ')) # Casting to integer
 
 ## Getting string input ##
 num_of_breaks = str(input('Put a value : ')) # Casting to string
+```
+
+### Common functions
+```
+## Range
+# The basic range() function
+range(stop)
+
+# The function range() with more parameters
+range(start, stop[, step])
+
 ```
 
 ### Getting variable's type
@@ -497,13 +510,74 @@ while i < 10:
 
 ```
 
-### Common functions
+### Advanced variable types
+#### Tuple - Immutable 
 ```
-## Range
-# The basic range() function
-range(stop)
+## You can only access its content
+>>> salad_ingredients[2] = "spinach" # TypeError
+```
+#### Best practice for data protection (Cannot be changed) and for law memory usage (Only necessary ram usage). Use it if the data per placement is important!
 
-# The function range() with more parameters
-range(start, stop[, step])
+##### Tuple  - Create new tuple
+```
+>>> my_first_tuple =()
+>>> one_value_tuple = (20,)
+>>> friendly_tuple = (2.5, 3, "banana")
+>>> sophisticated_tuple = 2, "tomato"
+
+```
+
+##### Tuple common actions
+```
+>>> milk_info = ("lactose", "11/08/2022", "dairy cows", "135.6 liters", 300)
+>>> len(milk_info)
+5
+
+>>> milk_info[0]
+'lactose'
+
+>>> milk_info[2:]
+('dairy cows', '135.6 liters', 300)
+
+>>> str(milk_info[4])+ " "+ milk_info[2]
+'300 dairy cows'
+
+>>>for infoin milk_info:
+... print("-- " + str(info) + " --")
+...
+-- lactose --
+-- 11/08/2022 --
+-- dairy cows --
+-- 135.6 liters --
+-- 300 --
+
+```
+
+##### Tuple - Special uses
+```
+## tuple assignment
+>>> (food, type, calories) = ("bread", "whole wheat", 80)
+>>> food
+'bread'
+>>> calories
+80
+
+# string formatting - Sting (%s)
+>>> fruit = "grapes"
+>>> drink = "wine"
+
+>>> "The basket contains %s and %s." % (fruit, drink)
+The basket contains grapes and wine.
+
+# string formatting - int (%d)
+>>> bottles_num, drink = 3, "wine"
+
+>>> "The basket contains %d bottles of %s." % (bottles_num, drink)
+The basket contains 3 bottles of wine.
+
+# string formatting - Hybrition
+>>> basket_content = 3, "wine"
+>>> "The basket contains %d bottles of %s." % basket_content
+The basket contains 3 bottles of wine.
 
 ```
