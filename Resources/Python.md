@@ -562,20 +562,21 @@ while i < 10:
 >>> calories
 80
 
-# string formatting - Sting (%s)
+# Basic formatting - old style 
+## formatting - Sting (%s)
 >>> fruit = "grapes"
 >>> drink = "wine"
 
 >>> "The basket contains %s and %s." % (fruit, drink)
 The basket contains grapes and wine.
 
-# string formatting - int (%d)
+## formatting - int (%d)
 >>> bottles_num, drink = 3, "wine"
 
 >>> "The basket contains %d bottles of %s." % (bottles_num, drink)
 The basket contains 3 bottles of wine.
 
-# string formatting - Hybrition
+## formatting - Hybrition of types
 >>> basket_content = 3, "wine"
 >>> "The basket contains %d bottles of %s." % basket_content
 The basket contains 3 bottles of wine.
