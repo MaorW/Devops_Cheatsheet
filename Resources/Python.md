@@ -581,4 +581,35 @@ The basket contains 3 bottles of wine.
 >>> "The basket contains %d bottles of %s." % basket_content
 The basket contains 3 bottles of wine.
 
+
+# Basic formatting - new style
+
+## .format()
+## formatting - Sting
+>>> fruit = "grapes"
+>>> drink = "wine"
+
+>>> "The basket contains {} and {}.".format(fruit, drink)
+>>> f"The basket contains {fruit} and {drink}."
+The basket contains grapes and wine.
+
+## formatting - int
+>>> bottles_num, drink = 3, "wine"
+
+>>> "The basket contains {} bottles of {}.".format(bottles_num, drink)
+>>> "The basket contains {0} bottles of {1}.".format(bottles_num, drink)
+The basket contains 3 bottles of wine.
+
+>>> a = 5
+>>> b = 10
+>>> 
+>>> f'Five plus ten is {a + b} and not {2 * (a + b)}.'
+Five plus ten is 15 and not 30.
+
+## formatting - Hybrition of types
+>>> basket_content = 3, "wine"
+>>> "The basket contains {} bottles of {}.".format(*basket_content) # Emphasis on an asterisk
+>>> f'The basket contains {basket_content[0]} bottles of {basket_content[1]}.'
+The basket contains 3 bottles of wine.
+
 ```
