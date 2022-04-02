@@ -418,6 +418,10 @@ False
 >>> sorted(my_list, key=str.lower)
 ['A', 'b', 'c', 'G', 'i', 'J', 'x', 'Z']
 
+>>> products = [('milk', '5.5'), ('candy', '2.5'), ('bread', '9.0')]
+>>> print(sorted(products, key=lambda x: x[1],  reverse=True))
+[('bread', '9.0'), ('milk', '5.5'), ('candy', '2.5')]
+
 # Join - Print list as a string
 print("Your pruduct list is: " + ",".join(products_list))
 
