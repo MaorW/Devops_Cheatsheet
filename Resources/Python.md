@@ -14,6 +14,8 @@
 
 ### For python's format documentation press [here](https://pyformat.info/) 
 
+### For Dictionary view objects info press [here](https://docs.python.org/2/library/stdtypes.html#dictionary-view-objects) 
+
 ### Data types and variables
 ```
 x = 5 # Integer
@@ -615,5 +617,81 @@ Five plus ten is 15 and not 30.
 >>> "The basket contains {} bottles of {}.".format(*basket_content) # Emphasis on an asterisk
 >>> f'The basket contains {basket_content[0]} bottles of {basket_content[1]}.'
 The basket contains 3 bottles of wine.
+
+```
+
+#### Dictionary(Dict) - Mutable
+##### Dictionary(Dict) - Practice
+
+```
+# Create new dict
+>>> new_dict = {}
+>>> another_dict = dict()
+>>> type(new_dict)
+<class 'dict'>
+>>> new_dict
+{}
+
+# Set key & value
+## key: value
+>>> keyboard_shortcuts = {"Copy": "Ctrl + C", "Paste": "Ctrl + V", "Undo": "Ctrl + Z"}
+>>> keyboard_shortcuts
+{'Copy': 'Ctrl + C', 'Paste': 'Ctrl + V', 'Undo': 'Ctrl + Z'}
+
+# How to access key's value
+## dict[key]
+>>> keyboard_shortcuts['Copy'] 
+'Ctrl + C'
+
+# How to avoid from 'KeyError' message for unexisting key(For example)
+>>> if "Cut" in keyboard_shortcuts:
+... # <do something>
+>>> keyboard_shortcuts['Cut'] 
+>>>
+
+# insert new key & value to dict
+## dict[key] = value
+>>> keyboard_shortcuts
+{'Copy': 'Ctrl + C', 'Paste': 'Ctrl + V', 'Undo': 'Ctrl + Z'} >>> keyboard_shortcuts["Cut"] = "Ctrl + X"
+>>> keyboard_shortcuts
+{'Copy': 'Ctrl + C', 'Paste': 'Ctrl + V', 'Undo': 'Ctrl + Z', 'Cut': 'Ctrl + X'}
+
+# Update key's value
+>>> keyboard_shortcuts["Copy"] = "Ctrl + Insert"
+>>> keyboard_shortcuts                          
+{'Copy': 'Ctrl + Insert', 'Paste': 'Ctrl + V', 'Undo': 'Ctrl + Z'}
+
+# Delete key & value
+>>> keyboard_info = {"Company": "Logitech", "Number of keys": 101, "Are emoji included?": True, "Language": "Hebrew"}
+>>> keyboard_info
+{'Company': 'Logitech', 'Number of keys': 101, 'Are emoji included?': True, 'Language': 'Hebrew'}
+
+## Option1 -- del
+>>> del keyboard_info["Number of keys"]
+>>> keyboard_info
+{'Company': 'Logitech', 'Are emoji included?': True, 'Language': 'Hebrew'}
+
+## Option2 -- pop()
+>>> keyboard_info.pop("Company") 
+'Logitech'
+>>> keyboard_info
+{'Number of keys': 101, 'Are emoji included?': True, 'Language': 'Hebrew'}
+
+# View objects methods
+## Show keys only - keys() method
+>>> keyboard_info
+{'Are emoji included?': True, 'Language': 'Hebrew'}
+>>> keyboard_info.keys()
+dict_keys(['Are emoji included?', 'Language'])
+
+## Show values only - values() - method
+>>> keyboard_info
+{'Are emoji included?': True, 'Language': 'Hebrew'}
+>>> keyboard_info.values()
+dict_values([True, 'Hebrew'])
+
+## Show pairs - Key & value - items() method
+>>> keyboard_info.items()
+dict_items([('Are emoji included?', True), ('Language', 'Hebrew')])
 
 ```
