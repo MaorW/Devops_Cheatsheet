@@ -695,3 +695,80 @@ dict_values([True, 'Hebrew'])
 dict_items([('Are emoji included?', True), ('Language', 'Hebrew')])
 
 ```
+
+### Working with files - txt files
+#### Working with files - Read files
+```
+# Open file
+## file_object = open(file, mode) # mode = r/w/rw
+>>> spells_input_file = open(r"c:\harry_potter\spells.txt","r") # r"" -- Avoid special marks like "\t"
+
+# close()
+>>> spells_input_file = open(r"c:\harry_potter\spells.txt", "r")
+>>> # do something with the file
+>>> spells_input_file.close()
+
+# With statement - Alternative for close() func
+>>> with open(r"c:\harry_potter\spells.txt", "r") as spells_input_file:
+>>>    # do something with the file
+
+
+# Reading a file - all the lines - best practice - for small files only
+## read() 
+>>> spells_input_file = open("c:\harry_potter\spells.txt", "r")
+>>> spells = spells_input_file.read()
+>>> spells
+"Avada Kedavra: Death\nAberto: Opens objects\nLumos: Creates light from the wand's tip\nObliviate: Erases memories\n"
+
+>>> print(spells)
+Avada Kedavra: Death
+Aberto: Opens objects
+Lumos: Creates light from the wand's tip
+Obliviate: Erases memories
+
+## readlines() - return list of the file's content
+>>> lines = spells_input_file.readlines()
+>>> lines
+['Avada Kedavra: Death\n', 'Aberto: Opens objects\n', 'Lumos: Creates light from the wand's tip\n', 'Obliviate: Erases memories']
+
+
+# Reading a file - line by line - best practice - for medium/big files
+## Reading files with for loop 
+>>> spells_input_file = open("c:\harry_potter\spells.txt", "r")
+>>> for line in spells_input_file
+... print(line, end="")
+...
+Avada Kedavra: Death
+Aberto: Opens objects
+Lumos: Creates light from the wand's tip
+Obliviate: Erases memories
+
+## readline()
+>>> line = spells_input_file.readline()
+>>> print(line)
+Avada Kedavra: Death
+>>> line = spells_input_file.readline()
+>>> print(line)
+Aberto: Opens objects
+>>> line = spells_input_file.readline()
+>>> print(line)
+Lumos: Creates light from the wand’s tip
+>>> line = spells_input_file.readline()
+>>> print(line)
+Obliviate: Erases memories
+
+
+```
+
+#### Working with files - Write in files
+```
+# Create new file or Overrite file's content
+chat_input_file = open("chat.txt", "w")
+
+## Write func
+chat_input_file = open("chat.txt", "w")
+chat_input_file.write("Me: Why chat, when you can use an owl?")
+chat_input_file.close()
+
+
+```
