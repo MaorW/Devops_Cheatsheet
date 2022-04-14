@@ -84,6 +84,11 @@ Starting a new line!'
 >>> print("Creating four spaces…\tDone!")
 'Creating four spaces…    Done!'
 
+# How to reverse a String in Python
+>>> word = "Hello"  
+>>> word[::-1] 
+'olleH'
+
 ```
 
 ### String practice - Slicing
