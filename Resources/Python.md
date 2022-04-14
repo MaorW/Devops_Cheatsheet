@@ -379,6 +379,12 @@ False
 >>> len(chemical_elements)
 4
 
+# How to Remove Duplicates From a Python List
+>>> mylist = ["a", "b", "a", "c", "c"]
+>>> mylist = list(dict.fromkeys(mylist))
+>>> mylist
+['a', 'b', 'c']
+
 ```
 
 #### List - Common functions
