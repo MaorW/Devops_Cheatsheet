@@ -754,6 +754,11 @@ Aberto: Opens objects
 Lumos: Creates light from the wand's tip
 Obliviate: Erases memories
 
+## Reading words from a file and putting into list
+lines_in_list = textfile.read()
+new_unduplicate_list = lines_in_list.split()
+new_unduplicate_list = list(dict.fromkeys(new_sort_unduplicate_list)) # Remove duplicates
+
 ## readline()
 >>> line = spells_input_file.readline()
 >>> print(line)
