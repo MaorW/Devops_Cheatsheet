@@ -2,6 +2,8 @@
 
 ### Link for a free courses: [Link1](https://campus.gov.il/course/course-v1-cs-gov-cs-selfpy101/)
 
+### Link for another free tutorial: [Link1](https://www.tutorialspoint.com/python3/index.htm)
+
 ### For documentation press [here](https://docs.python.org/3/)
 
 ### For a style guide press [here](https://www.python.org/dev/peps/pep-0008/)
