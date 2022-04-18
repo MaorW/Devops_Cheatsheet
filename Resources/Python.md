@@ -790,3 +790,63 @@ chat_input_file.close()
 
 
 ```
+
+#### Working with files - Serialization process
+```
+cd_details = {"song": "I believe I can fly", "name": "Robert Kelly", "year": 1998}
+input_file = open("c:\myCD.txt", "w")
+for key, value in cd_details.items():
+    input_file.write("%s:%s\n" % (key, value))
+input_file.close()
+"
+song:I believe I can fly
+name:Robert Kelly
+year:1998
+"
+
+```
+
+#### Working with files - Deserialization process
+```
+# From the myCD.txt file
+"
+myCD.txt
+song:I believe I can fly
+name:Robert Kelly
+year:1998
+"
+
+# Read its content
+f = open("c:\myCD.txt", "r")
+cd_data = f.read()
+
+# Split the lines and keep every line as a saperate key-value 
+cd_splitted_lines = cd_data.split("\n")
+print(cd_splitted_lines) # ['song:I believe I can fly','name:Robert Kelly','year:1998']
+
+# Take every key-value variables and put it into new list
+cd_items = []
+for element in cd_splitted_lines:
+    cd_items.append(element.split(":"))
+print(cd_items) # [['song', 'I believe I can fly'], ['name', 'Robert Kelly'], ['year', '1998']]
+
+# Convert cs=d_items list to my_dc_dict dictionary
+my_cd_dict = {}
+for item in cd_items:
+    my_cd_dict[item[0]] = item[1]
+print(my_cd_dict) # {'song': 'I believe I can fly', 'name': 'Robert Kelly', 'year': '1998'}
+
+## Code summery
+f = open("c:\myCD.txt", "r")
+cd_data = f.read()
+cd_splitted_lines = cd_data.split("\n")
+cd_items = []
+for element in cd_splitted_lines:
+    cd_items.append(element.split(":"))
+my_cd_dict = {}
+for item in cd_items:
+    my_cd_dict[item[0]] = item[1]
+f.close()
+print(my_cd_dict) # {'song': 'I believe I can fly', 'name': 'Robert Kelly', 'year': '1998'}
+
+```
