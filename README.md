@@ -59,3 +59,6 @@
     - [Tuple - Immutable](https://github.com/MaorW/Devops_Cheatsheet/blob/main/Resources/Python.md#tuple---immutable)
     - [Dictionary(Dict) - Mutable](https://github.com/MaorW/Devops_Cheatsheet/blob/main/Resources/Python.md#advanced-variable-types)
 - [Working with files](https://github.com/MaorW/Devops_Cheatsheet/blob/main/Resources/Python.md#working-with-files---txt-files)
+
+## AWS CLI
+- [Secrets](https://github.com/MaorW/Devops_Cheatsheet/blob/main/Resources/aws-cli.md#Secrets)
